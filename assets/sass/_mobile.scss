@@ -25,6 +25,9 @@ a {
 		transition: all 0.25s linear;
 	}
 }
+small {
+	font-size: 0.875em;
+}
 
 /* Utility */
 .no-top-marg {
@@ -87,7 +90,7 @@ a {
 	background-color: white;
 }
 .site-content {
-	margin-bottom: 1.5em;
+	margin-bottom: 1.25em;
 }
 section {
 	margin-bottom: 2.0em;
