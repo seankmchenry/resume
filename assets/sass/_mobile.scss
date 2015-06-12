@@ -154,13 +154,23 @@ section {
 .site-footer {
 	padding: 2.5em 0;
 	text-align: center;
-	background-color: $body-bg;
+	background: linear-gradient(lighten($body-bg, 2.5%), $body-bg);
 	a {
 		color: white;
 	}
 	ul {
-		margin: 0;
+		margin: 0 0 0.5em;
 		padding: 0;
+	}
+	span {
+		display: block;
+	}
+	.home-link {
+		border-bottom: 1px dotted transparent;
+		&:hover {
+			border-color: white;
+			@include transition(all, 0.5s);
+		}
 	}
 }
 .social {
