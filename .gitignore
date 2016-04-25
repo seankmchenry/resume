@@ -5,11 +5,3 @@
 .DS_Store
 Desktop.ini
 Thumbs.db
-
-# NPM files
-.sass-cache/
-node_modules/
-npm-debug.log
-
-# Styles
-assets/css/*
