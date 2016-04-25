@@ -34,15 +34,19 @@ small {
 /*
 Classes
  */
-.no-top-marg {
-  margin-top: 0;
-}
 .list-circle {
   list-style-type: circle;
 }
-.sm-top-marg {
-  margin-top: 0.5em;
-}
+
+.mt0 { margin-top: 0; }
+.mt1 { margin-top: 0.5em; }
+.mt2 { margin-top: 1em; }
+.mt3 { margin-top: 2em; }
+
+.mb0 { margin-bottom: 0; }
+.mb1 { margin-bottom: 0.5em; }
+.mb2 { margin-bottom: 1em; }
+.mb3 { margin-bottom: 2em; }
 
 /*
 Header
@@ -50,7 +54,7 @@ Header
 .site-header {
 	position: relative;
 	text-align: center;
-	padding: 5.0em 0;
+	padding: 3.0em 0;
 	margin-bottom: 3.0em;
 	background: #222 url('../img/header-bg.jpg') 50% 50% no-repeat;
 	background-size: cover;
@@ -86,6 +90,8 @@ Header
 	}
 
 	@include break-sm {
+		padding: 5.0em 0;
+
 		h1 {
 			font-size: 3.0em;
 			margin: 0 0 0.5em;
@@ -137,6 +143,8 @@ section {
 	}
 }
 .details {
+	margin-bottom: 1.5em;
+
 	span {
 		&:nth-child(odd) {
 			font-weight: bold;
