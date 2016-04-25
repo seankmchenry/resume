@@ -1,2 +1,15 @@
 # Include your project-specific ignores in this file
 # Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+
+# Junk files
+.DS_Store
+Desktop.ini
+Thumbs.db
+
+# NPM files
+.sass-cache/
+node_modules/
+npm-debug.log
+
+# Styles
+assets/css/*
