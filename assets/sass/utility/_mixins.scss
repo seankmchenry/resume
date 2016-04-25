@@ -1,0 +1,51 @@
+/**
+ * _mixins.scss
+ */
+
+/*
+Animation
+ */
+@mixin animate($transition: all, $time: .25s) {
+  transition: $transition $time ease;
+}
+@mixin no-animate() {
+  transition: none;
+}
+
+/*
+Antialiasing
+ */
+@mixin font-smoothing($value: on) {
+  @if ($value == on) {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}
+
+/*
+Media queries
+ */
+@mixin break-xs {
+  @media (min-width: $break-xs) {
+    @content
+  }
+}
+@mixin break-sm {
+  @media (min-width: $break-sm) {
+    @content
+  }
+}
+@mixin break-md {
+  @media (min-width: $break-md) {
+    @content
+  }
+}
+@mixin break-lg {
+  @media (min-width: $break-lg) {
+    @content
+  }
+}

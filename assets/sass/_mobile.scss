@@ -1,15 +1,16 @@
-/*! _mobile.scss */
+/**
+ * _mobile.scss
+ */
 
-/* ==========================================================================
-   Global
-   ========================================================================== */
-
+/*
+Global
+ */
 body {
 	background-color: $body-bg;
 	font-family: $body-font;
 	color: $body-color;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	overflow-x: hidden;
+	@include font-smoothing(on);
 }
 h1, h2, h3 {
 	text-transform: uppercase;
@@ -19,31 +20,33 @@ h1, h2, h3 {
 a {
 	color: $link-color;
 	text-decoration: none;
+	transition: color 0.25s;
+
 	&:focus,
 	&:hover {
 		color: darken($link-color, 10%);
-		transition: all 0.25s linear;
 	}
 }
 small {
 	font-size: 0.875em;
 }
 
-/* Utility */
+/*
+Classes
+ */
 .no-top-marg {
-	margin-top: 0;
+  margin-top: 0;
 }
 .list-circle {
-	list-style-type: circle;
+  list-style-type: circle;
 }
 .sm-top-marg {
-	margin-top: 0.5em;
+  margin-top: 0.5em;
 }
 
-/* ==========================================================================
-   Header
-   ========================================================================== */
-
+/*
+Header
+ */
 .site-header {
 	position: relative;
 	text-align: center;
@@ -53,6 +56,7 @@ small {
 	background-size: cover;
 	color: white;
 	z-index: 100;
+
 	h1, .links {
 		position: relative;
 		z-index: 300;
@@ -80,12 +84,21 @@ small {
 		background-color: rgba(0, 0, 0, 0.4);
 		z-index: 200;
 	}
+
+	@include break-sm {
+		h1 {
+			font-size: 3.0em;
+			margin: 0 0 0.5em;
+		}
+		.links {
+			font-size: 1.125em;
+		}
+	}
 }
 
-/* ==========================================================================
-   Content
-   ========================================================================== */
-
+/*
+Content
+ */
 .main {
 	background-color: white;
 }
@@ -94,15 +107,21 @@ small {
 }
 section {
 	margin-bottom: 2.0em;
+
 	h2 {
 		font-size: 1.25em;
 		margin-top: 0;
+
 		&:after {
 			content: "";
 			display: block;
 			width: 30px;
 			height: 2px;
-			background-color: $teal;
+			background-color: $accent-color;
+		}
+
+		@include break-sm {
+			font-size: 1.5em;
 		}
 	}
 	ul {
@@ -132,25 +151,20 @@ section {
 	top: 0; left: 0;
 }
 
-/* Profile */
-.profile {}
-
 /* Expertise */
-.experience {}
+.expertise {
+	@include break-xs {
+		ul {
+			column-count: 2;
+			column-gap: 20px;
+		}
+	}
+}
 
-/* WordPress */
-.wordpress {}
 
-/* Experience */
-.experience {}
-
-/* Education */
-.education {}
-
-/* ==========================================================================
-   Footer
-   ========================================================================== */
-
+/*
+Footer
+ */
 .site-footer {
 	padding: 2.5em 0;
 	text-align: center;
@@ -167,17 +181,24 @@ section {
 	}
 	.home-link {
 		border-bottom: 1px dotted transparent;
-		&:hover {
+		@include animate(border-color);
+
+		&:hover,
+		&:focus {
 			border-color: white;
-			@include transition(all, 0.5s);
 		}
 	}
 }
 .social {
 	list-style-type: none;
+
 	li {
 		display: inline;
 		padding: 0 0.375em;
+
+		@include break-xs {
+			padding: 0 0.5em;
+		}
 	}
 	.twitter:hover {
 		color: $twitter;
