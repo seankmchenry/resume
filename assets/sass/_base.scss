@@ -235,9 +235,11 @@ textarea {
     border-bottom: 1px dotted $body-color;
   }
 
-  /*a[href]:after {
+  a[href]:after {
     content: " (" attr(href) ")";
-  }*/
+    font-size: 0.8em;
+    font-weight: normal;
+  }
 
   abbr[title]:after {
     content: " (" attr(title) ")";
