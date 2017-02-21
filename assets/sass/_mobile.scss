@@ -72,9 +72,12 @@ Header
 	}
 	.links {
 		font-family: $heading-font;
+
 		a {
 			color: white;
-			&:hover {
+
+			&:hover,
+			&:focus {
 				color: $link-color;
 			}
 		}
@@ -132,11 +135,6 @@ section {
 	}
 	ul {
 		padding-left: 0;
-		li {
-			list-style-position: inside;
-			text-indent: -1em;
-			padding-left: 1em;
-		}
 	}
 	span {
 		display: block;
@@ -177,6 +175,7 @@ Footer
 	padding: 2.5em 0;
 	text-align: center;
 	background: linear-gradient(lighten($body-bg, 2.5%), $body-bg);
+
 	a {
 		color: white;
 	}
